@@ -1,7 +1,9 @@
-import React from "react";
-
-function Index() {
-  return <div>Index</div>;
+export default function List({ activities }) {
+  return (
+    <ul>
+      {activities.map((activity) => {
+        return <li key={activity.id}>{activity.name}</li>;
+      })}
+    </ul>
+  );
 }
-
-export default Index;

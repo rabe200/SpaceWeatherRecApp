@@ -3,9 +3,9 @@ export default function Form({ onAddActivity }) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    console.log(data);
+
     const newTask = {
-      name: data.activity,
+      name: data.name,
       isForGoodWeather: data.isForGoodWeather,
     };
     onAddActivity(newTask);
@@ -17,8 +17,8 @@ export default function Form({ onAddActivity }) {
   return (
     <form onSubmit={handleSubmit}>
       <h1>Space Weatherapp</h1>
-      <label htmlFor="activity">Activity</label>
-      <input type="text" id="activity" name="activity"></input>
+      <label htmlFor="name">Activity</label>
+      <input type="text" id="name" name="name"></input>
       <label htmlFor="isForGoodWeather"></label>
       <input
         type="checkbox"
