@@ -3,13 +3,15 @@ export default function Form({ onAddActivity }) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    console.log(data);
+
     const weatherCheck = {
       name: data.name,
       isForGoodWeather: data.isForGoodWeather.checked,
     };
-    // onAddActivity(data);
-    console.log(weatherCheck);
+    onAddActivity(weatherCheck);
+
+    event.target.reset();
+    event.target.focus();
   }
 
   return (
