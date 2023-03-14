@@ -6,7 +6,7 @@ export default function Form({ onAddActivity }) {
 
     const newTask = {
       name: data.name,
-      isForGoodWeather: data.isForGoodWeather,
+      isForGoodWeather: !!data.isForGoodWeather,
     };
     onAddActivity(newTask);
 
